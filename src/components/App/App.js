@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import ProjectList from "../ProjectList/ProjectList";
-// import ReadMe from "../ReadMe/ReadMe";
+import ReadMeContainer from "../ReadMeContainer/ReadMeContainer";
 
 
 class App extends React.Component {
@@ -37,7 +37,7 @@ class App extends React.Component {
       <div className="App">
         <SearchBar handleChange={this.handleChange} />
         <ProjectList testObj={this.testObj}/>
-        {/* <ReadMe/> */}
+        <ReadMeContainer />
       </div>
     );
   }
