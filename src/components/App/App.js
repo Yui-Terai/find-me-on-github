@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
-// import ProjectList from "../ProjectList/ProjectList";
+import ProjectList from "../ProjectList/ProjectList";
 import ReadMeContainer from "../ReadMeContainer/ReadMeContainer";
 import Github from "../../util/Github";
 
@@ -11,12 +11,12 @@ class App extends React.Component {
 
     this.state = {
       username: "",
-      projects: []
+      repos: []
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.searchProject = this.searchProject.bind(this);
+    this.searchRepo = this.searchRepo.bind(this);
   }
 
   // Will be called when a user is typing in the search form: at SearchBar component
@@ -26,21 +26,24 @@ class App extends React.Component {
 
   // Will be called when a user clicks the search button: at SearchBar component
   handleClick(e) {
-    this.searchProject(this.state.username);
+    this.searchRepo(this.state.username);
     e.preventDefault();
   }
 
-  searchProject(username) {
-    Github.searchProject(this.state.username).then(projects => {
-      this.setState = { projects: projects };
+  searchRepo(username) {
+    Github.searchRepo(this.state.username).then(repos => {
+      this.setState({ repos: repos });
     });
   }
 
   render() {
     return (
       <div className="App">
-        <SearchBar handleChange={this.handleChange} handleClick={this.handleClick}/>
-        {/* <ProjectList projects={this.state.projects} /> */}
+        <SearchBar
+          handleChange={this.handleChange}
+          handleClick={this.handleClick}
+        />
+        <ProjectList repos={this.state.repos} />
         <ReadMeContainer />
       </div>
     );
