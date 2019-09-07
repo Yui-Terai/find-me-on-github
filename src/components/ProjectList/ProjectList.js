@@ -6,8 +6,8 @@ class ProjectList extends React.Component {
   render() {
     return (
       <div className="projectList">
-        {this.props.testObj.map((item, i) => {
-          return <Project key={i} item={item} />;
+        {this.props.projects.map((project, i) => {
+          return <Project key={i} project={project} />;
         })}
       </div>
     );
