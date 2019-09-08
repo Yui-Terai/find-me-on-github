@@ -11,12 +11,14 @@ class App extends React.Component {
 
     this.state = {
       username: "",
-      repos: []
+      repos: [],
+      readMe: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.searchRepo = this.searchRepo.bind(this);
+    this.handleClickReadMe = this.handleClickReadMe.bind(this);
   }
 
   // Will be called when a user is typing in the search form: at SearchBar component
@@ -30,10 +32,19 @@ class App extends React.Component {
     e.preventDefault();
   }
 
+  // Will be called in the handleClick function
   searchRepo(username) {
     Github.searchRepo(this.state.username).then(repos => {
       this.setState({ repos: repos });
     });
+  }
+
+  // Will be called when a user click the see readme button
+  handleClickReadMe(e) {
+    Github.getReadMe(this.state.username, e.target.value).then(readMe => {
+      this.setState({ readMe: readMe });
+    });
+    e.preventDefault();
   }
 
   render() {
@@ -43,8 +54,11 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleClick={this.handleClick}
         />
-        <ProjectList repos={this.state.repos} />
-        <ReadMeContainer />
+        <ProjectList
+          repos={this.state.repos}
+          handleClickReadMe={this.handleClickReadMe}
+        />
+        <ReadMeContainer readMe={this.state.readMe} />
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import React from "react";
 import "./ReadMeContainer.css";
-import ReadMe from "../ReadMe/ReadMe";
 
 class ReadMeContainer extends React.Component {
   render() {
     return (
+      // Render readme which is holded in a string in state
       <div className="readMeContainer">
-        <ReadMe />
+        <div>{this.props.readMe}</div>
       </div>
     );
   }
