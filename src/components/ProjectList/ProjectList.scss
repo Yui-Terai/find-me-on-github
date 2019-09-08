@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.readMe-button {
+  &:focus {
+    outline: none;    
+  }
+  border-radius: $border-radius;
+  color: $text-color;
+  background: #851b1f;
+}

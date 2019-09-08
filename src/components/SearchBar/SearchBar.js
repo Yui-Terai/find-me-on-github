@@ -1,18 +1,22 @@
 import React from "react";
-import "./SearchBar.css";
+import "./SearchBar.scss";
 
 class SearchBar extends React.Component {
   render() {
     return (
       // Create serach bar with search button
       <div className="searchBar">
-        <input
-          placeholder="Enter Username"
-          onChange={this.props.handleChange}
-        />
-        <button type="button" onClick={this.props.handleClick}>
-          SEARCH
-        </button>
+        <div className="searchBar-field">
+          <input
+            placeholder="Enter Username"
+            onChange={this.props.handleChange}
+          />
+        </div>
+        <div className="searchBar-button">
+          <button type="button" onClick={this.props.handleClick}>
+            SEARCH
+          </button>
+        </div>
       </div>
     );
   }

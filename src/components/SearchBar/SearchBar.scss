@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchBar-field {
+  display: flex;
+  justify-content: center;
+  input {
+    &:focus {
+      outline: none;    
+    }
+    width: 365px;
+    height: 45px;
+    border-radius: $border-radius;
+    border-color: #85837e;
+    margin: 65px 65px 20px;
+    font-size: 15px;
+  }
+}
+
+.searchBar-button {
+  @extend .searchBar-field;
+  button {
+    width: 100px;
+    height: 40px;
+    border-radius: $border-radius;
+    background: #00000c;
+    color: $text-color;
+    font-weight: $font-weight;
+    margin-bottom: 50px;
+  }
+}

@@ -1,5 +1,14 @@
-@import "variables.scss" 
+@import "../../styles/variables.scss";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 h1 {
-  color: $test-color;
+  text-align: center;
+  font-size: 60px;
+  font-weight: $font-weight;
+  padding: 30px;
+  background: #141009;
+  color: $text-color
 }
