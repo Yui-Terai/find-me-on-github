@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
+import '../../styles/variables.scss'
 import SearchBar from "../SearchBar/SearchBar";
 import ProjectList from "../ProjectList/ProjectList";
 import ReadMeContainer from "../ReadMeContainer/ReadMeContainer";
@@ -50,6 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1>Find Me On Github</h1>
         <SearchBar
           handleChange={this.handleChange}
           handleClick={this.handleClick}
