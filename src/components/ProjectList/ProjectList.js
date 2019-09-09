@@ -12,11 +12,11 @@ class ProjectList extends React.Component {
             <React.Fragment key={i}>
               <div className="row m-3">
                 {/* Pass the array of list of repo's name as a prop named repo */}
-                <div className="col d-flex justify-content-center">
+                <div className="col-sm-8 col-md-6 col-lg-6 d-flex justify-content-center">
                   <Project repo={repo} />
                 </div>
                 {/* Pass the repo's name as value: We will use this value for the url when we fetch readme */}
-                <div className="col d-flex justify-content-center">
+                <div className="col-sm-4 col-md-6 col-lg-6 d-flex justify-content-center">
                   <button className='readMe-button'
                     value={repo.name}
                     onClick={this.props.handleClickReadMe}

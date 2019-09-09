@@ -1,4 +1,8 @@
+@import "../../styles/variables.scss";
+
 .project {
+  color: #100A1C;
+  font-weight: $font-weight;
   &:before {
     content:'✴︎ ';
   }

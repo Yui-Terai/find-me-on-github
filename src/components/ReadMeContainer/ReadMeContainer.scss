@@ -3,21 +3,4 @@
 .readMeContainer {
   display: flex;
   justify-content: center;
-  p {
-    &:active {
-      width: 800px;
-      margin: 30px;
-      padding: 20px;
-      background: #fef8e7;
-      border-radius: $border-radius;
-    }
-  }
 }
-
-// .readMe {
-//     width: 800px;
-//     margin: 30px;
-//     padding: 20px;
-//     background: #fef8e7;
-//     border-radius: $border-radius;
-//   }

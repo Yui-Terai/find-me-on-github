@@ -11,6 +11,7 @@ class ReadMeContainer extends React.Component {
           style={
             this.props.readMe
               ? {
+                  color: "#0C134E",
                   width: "800px",
                   margin: "30px",
                   padding: "20px",

@@ -1,7 +1,7 @@
-const apiKey = "7d9d7aa1f83f1108f2fa44981815469acd11d92b";
+const apiKey = `${process.env.REACT_APP_API_KEY}`;
 
 const Github = {
-// Fetch the selected user's repos
+  // Fetch the selected user's repos
   searchRepo(username) {
     return fetch(`https://api.github.com/users/${username}/repos`, {
       method: "GET",
@@ -25,7 +25,7 @@ const Github = {
       });
   },
 
-// Fetch the selected repo's readme
+  // Fetch the selected repo's readme
   getReadMe(username, repo) {
     return fetch(`https://api.github.com/repos/${username}/${repo}/readme`, {
       method: "GET",
