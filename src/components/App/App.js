@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      word: "",
       username: "",
       repos: [],
       readMe: ""
@@ -29,6 +30,7 @@ class App extends React.Component {
   // Will be called when a user clicks the search button: at SearchBar component
   handleClick(e) {
     this.searchRepo(this.state.username);
+    this.setState({ readMe: "" });
     e.preventDefault();
   }
 
@@ -50,7 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Find Me on Github</h1>
+        <h1>Find Me on Github <i class="fab fa-github"></i></h1>
         <SearchBar
           handleChange={this.handleChange}
           handleClick={this.handleClick}
